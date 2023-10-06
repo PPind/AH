@@ -3,7 +3,7 @@ html, body {
     padding: 0;
 }
 body {
-    background-image: url(https://media0.giphy.com/media/x8Jmfuz6xbVCM/200w.gif?cid=82a1493b8be6qcyy4v4ggzadl0qw46j7impu7zqvp8hac8ib&ep=v1_gifs_related&rid=200w.gif&ct=g);
+    background-image: url(vudinad_ja_vidinad/glitter.gif);
     box-sizing: border-box;
 }
 .header {
@@ -18,16 +18,17 @@ header {
     display: inline;
 }
 .icon {
-    height: 90%;
+    height: 60px;
     width: auto;
-    margin: auto 0 auto 0;
-    padding-right: 20px;
+    margin: 5px 5px 5px 0;
     float: right;
     display: inline;
 }
 .main {
     background-color: pink;
-    margin: auto;
+    margin: 30px auto;
+    padding: 10px 20px;
     min-width: 400px;
     max-width: 60%;
+    border-radius: 15px;
 }
