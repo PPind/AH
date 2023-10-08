@@ -1,0 +1,27 @@
+.tekst {
+    text-align: center;
+}
+
+.rule {
+    display: inline-block;
+}
+
+.ruleImg {
+    height: 60px;
+    width: auto;
+}
+
+#title, #file, #titleLabel, #fileLabel {
+    float: left;
+}
+
+#titleLabel, #fileLabel {
+    margin-left: 10%;
+}
+
+
+#text {
+    width: 80%;
+    height: 250px;
+    resize: none;
+}
