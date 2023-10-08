@@ -2,7 +2,8 @@
     background-color: rgb(255, 217, 252);
     margin: 30px auto;
     padding: 10px 20px;
-    width: 960px;
+    min-width: 350px;
+    max-width: 60%;
     border-radius: 15px;
     flex-direction: row;
 }
@@ -11,6 +12,7 @@
     background: rgb(255, 217, 252);
     flex-basis: calc((100% - 960px) / 2);
     padding: 20px;
+    max-width: 20%;
 }
 
 @media (min-width: 800px) {
@@ -75,4 +77,10 @@
     margin: 5px 5px 5px 0;
     padding-right: 2%;
     
+}
+
+.leegid {
+    width: 100%;
+    height: 100%;
+    background-image: url(vudinad_ja_vidinad/leegid.gif);
 }
