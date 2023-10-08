@@ -62,6 +62,7 @@ header {
 }
 footer{
     background: url(vudinad_ja_vidinad/leegid.gif);
+    background-size: contain;
     background-position: 0 0;
     box-sizing: border-box;
     position: fixed;
