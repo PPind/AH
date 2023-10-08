@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="login.css">
@@ -7,41 +8,42 @@
 </head>
 <body>
 
-    <div class="wrapper">
-        <div class="header">
-            <nav>
-                <a href="index.html">HOME :3 </a>
-                <a href="addPost.html">New_post!!</a>
-            </nav>
-            <header>≽^•⩊•^≼</header>
-            <img class="icon" src="vudinad_ja_vidinad/star.gif" alt = "starry">
-        </div>
-
-        <div class="main">
-            <div class="tekst">
-                <h1 id = "hId">Welcome to CoolSite ! :3</h1>
-
-                <a href="uuskasutaja.html">Create a new account</a>
+<div class="wrapper">
+    <div class="header">
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+        <header>≽^•⩊•^≼</header>
+        <img class="icon" src="vudinad_ja_vidinad/star.gif">
+    </div>
+    
+    <div class="main">
+        <div class="tekst">
+            <h1 id = "hId">Welcome to CoolSite ! :3</h1>
+    
+            <a href="uuskasutaja.html">Create a new account</a>
+            
+            <h1>Log in:</h1>
+            <form action="index.html">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" placeholder="E-mail" required><br><br>
+                <label for="parool">Password:</label>
+                <input type="password" id="parool" name="parool" placeholder="Password" required><br><br>  
+                <input type="submit" value="Log in">
                 
-                <h1>Log in:</h1>
-                <form action="index.html">
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required><br><br>
-                    <label for="parool">Password:</label>
-                    <input type="password" id="parool" name="parool" placeholder="Password" required><br><br>  
-                    <input type="submit" value="Log in">
-                    
-                </form> 
-                
-            </div>
-            <div class = "parooliunustus" >
-            <a href="maunustasinomaparooli.html">I forgor my silly password :(</a>
-            </div>
+            </form> 
+            
         </div>
-
+        <div class = "parooliunustus" >
+        <a href="maunustasinomaparooli.html">I forgor my silly password :(</a>
+        </div>
+    </div>
+    
     <div class="footer">
         
     </div>
 </div>
+    
+
 
 </body>
