@@ -1,0 +1,95 @@
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.wrapper > *{
+    padding: 10px;
+    padding-bottom: 0px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 15px;
+}
+
+footer{
+    background: url(vudinad_ja_vidinad/leegid.gif);
+    background-position: 0 0;
+    box-sizing: border-box;
+    position:fixed;
+    bottom: 0;
+    width: 100%;
+    height:200px;
+    display: flex;
+}
+
+.main {
+    background-color: rgb(255, 217, 252);
+    margin: 30px auto;
+    padding: 10px 20px;
+    min-width: 400px;
+    max-width: 60%;
+    border-radius: 15px;
+}
+
+.aside1 {
+    background: rgb(255, 217, 252);
+}
+
+.aside2 {
+    background: rgb(255, 217, 252);
+}
+
+@media (min-width: 800px) {
+    .main {
+        flex: 3;
+    }
+
+    .aside1 {
+        order: 1;
+    }
+
+    .aside2 {
+        order: 2;
+    }
+
+    .main {
+        order: 2;
+    }
+
+    .footer {
+        order: 4;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-flow: column wrap;
+    }
+    .aside1, .aside2 {
+        display: none;
+    }
+}
+
+.main ~ .post {
+    border-style: dotted;
+    border-color: hotpink;
+}
+
+.postHeader {
+    display: flex;
+    flex-direction: row;
+}
+
+.post > h1 {
+    font-size: 30px;
+}
+
+.postIcon {
+    height: 60px;
+    width: auto;
+    margin: 5px 5px 5px 0;
+    float: right;
+    padding-right: 2%;
+    display: inline;
+}
