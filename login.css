@@ -4,9 +4,13 @@
     padding-top: 2%;
 }
 
+#hId{
+    
+    color: rgb(184, 10, 103);
+}
+
 h1{
     font-size: 180%;
-    color: rgb(184, 10, 103);
 }
 
 .parooliunustus{
