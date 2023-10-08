@@ -19,7 +19,7 @@ footer{
     position:fixed;
     bottom: 0;
     width: 100%;
-    height:200px;
+    height:100px;
     display: flex;
 }
 
@@ -27,18 +27,14 @@ footer{
     background-color: rgb(255, 217, 252);
     margin: 30px auto;
     padding: 10px 20px;
-    min-width: 400px;
-    max-width: 60%;
+    width: 960px;
     border-radius: 15px;
     flex-direction: row;
 }
 
-.aside1 {
+.aside1, .aside2 {
     background: rgb(255, 217, 252);
-}
-
-.aside2 {
-    background: rgb(255, 217, 252);
+    flex-basis: 100px;
 }
 
 @media (min-width: 800px) {
@@ -100,4 +96,8 @@ footer{
     margin: 5px 5px 5px 0;
     padding-right: 2%;
     
+}
+
+.postFooter {
+    width: auto;
 }
