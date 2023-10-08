@@ -2,15 +2,15 @@
     background-color: rgb(255, 217, 252);
     margin: 30px auto;
     padding: 10px 20px;
-    width: 1000px;
+    width: 960px;
     border-radius: 15px;
     flex-direction: row;
 }
 
 .aside1, .aside2 {
     background: rgb(255, 217, 252);
-    flex-basis: 100px;
-    width: 100px;
+    flex-basis: calc((100% - 960px) / 2);
+    padding: 20px;
 }
 
 @media (min-width: 800px) {

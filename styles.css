@@ -10,12 +10,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     text-align: center;
-}
-
-.wrapper{
-    display: flex;
-    flex-flow: row wrap;
-    text-align: center;
+    justify-content: space-between;
 }
 
 .wrapper > *{
