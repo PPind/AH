@@ -2,7 +2,7 @@
     background-color: rgb(255, 217, 252);
     margin: 30px auto;
     padding: 10px 20px;
-    width: 960px;
+    width: 1000px;
     border-radius: 15px;
     flex-direction: row;
 }
@@ -10,6 +10,7 @@
 .aside1, .aside2 {
     background: rgb(255, 217, 252);
     flex-basis: 100px;
+    width: 100px;
 }
 
 @media (min-width: 800px) {
