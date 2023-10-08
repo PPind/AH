@@ -7,6 +7,20 @@ body {
     box-sizing: border-box;
 }
 
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.wrapper > *{
+    padding: 10px;
+    padding-bottom: 0px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 15px;
+}
+
 .header {
     display: flex;
     flex-direction: row;
@@ -61,4 +75,10 @@ nav a:link {
 
 nav a:hover {
     background-color: pink;
+}
+
+@media (max-width: 800px) {
+    body {
+        flex-flow: column wrap;
+    }
 }
