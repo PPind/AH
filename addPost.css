@@ -11,9 +11,14 @@
     width: auto;
 }
 
-#title {
-    margin-right: 10px;
+#title, #file, #titleLabel, #fileLabel {
+    float: left;
 }
+
+#titleLabel, #fileLabel {
+    margin-left: 10%;
+}
+
 
 #text {
     width: 80%;
