@@ -1,0 +1,22 @@
+.tekst {
+    text-align: center;
+}
+
+.rule {
+    display: inline-block;
+}
+
+.ruleImg {
+    height: 60px;
+    width: auto;
+}
+
+#title {
+    margin-right: 10px;
+}
+
+#text {
+    width: 80%;
+    height: 250px;
+    resize: none;
+}
