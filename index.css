@@ -60,7 +60,7 @@
 }
 .post * h1 {
     margin-left: auto;
-    float: rigt;
+    float: right;
 }
 
 .post h1::first-letter {
