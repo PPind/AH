@@ -10,9 +10,11 @@ body {
     background-color: hotpink;
     width: 100%;
     height: 70px;
+    padding-top: 1%;
+
 }
 header {
-    font-size: 50px;
+    font-size: 40px;
     margin: auto;
     padding-left: 20px;
     display: inline;
@@ -25,10 +27,14 @@ header {
     display: inline;
 }
 .main {
-    background-color: pink;
+    background-color: rgb(255, 217, 252);
     margin: 30px auto;
     padding: 10px 20px;
     min-width: 400px;
     max-width: 60%;
     border-radius: 15px;
+}
+
+.button:hover {
+    opacity: 0.6;
 }
