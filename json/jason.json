@@ -1,112 +1,112 @@
-[
+{"posts": [
     {
         "id": 1,
         "user": "kiisumiisu",
-        "userpicture": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
+        "userIcon": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
         "title": "cheeze",
         "text": "rat eat cheese i think",
-        "postimage": "vudinad_ja_vidinad/badrats.jpg",
+        "postImage": "vudinad_ja_vidinad/badrats.jpg",
         "dislikes": 5,
-        "is_pinned": false,
-        "time": "2006-10-23"
+        "isPinned": false,
+        "date": "2006-10-23"
     },
     {
         "id": 2,
         "user": "kassimassi",
-        "userpicture": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
+        "userIcon": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
         "title": "hiii",
         "text": "MA OLEN VÄIKE SILLY KASS KES ELAB SU PEA SEES IHHIHIHIHIH",
-        "postimage": "",
+        "postImage": "",
         "dislikes": 160549,
-        "is_pinned": true,
-        "time": "2023-10-01"
+        "isPinned": true,
+        "date": "2023-10-01"
     },
     {
         "id": 3,
         "user": "hatman43",
-        "userpicture": "vudinad_ja_vidinad/hatman.jpg",
+        "userIcon": "vudinad_ja_vidinad/hatman.jpg",
         "title": "Hats cheap price in the world : D",
         "text": "Inshallah i sell hat. hat good quality. never fallen off head of anyone. good hats and cheap price too : )",
-        "postimage": "vudinad_ja_vidinad/hat.jpg",
+        "postImage": "vudinad_ja_vidinad/hat.jpg",
         "dislikes": 0,
-        "is_pinned": false,
-        "time": "2023-09-01"
+        "isPinned": false,
+        "date": "2023-09-01"
     },
     {
         "id": 4,
         "user": "GloomRaven",
-        "userpicture": "vudinad_ja_vidinad/gerry2.gif",
+        "userIcon": "vudinad_ja_vidinad/gerry2.gif",
         "title": "my meow meow",
         "text": "look at my meow meow",
-        "postimage": "vudinad_ja_vidinad/gerry4.jpg",
+        "postImage": "vudinad_ja_vidinad/gerry4.jpg",
         "dislikes": 13,
-        "is_pinned": false,
-        "time": "2023-10-31"
+        "isPinned": false,
+        "date": "2023-10-31"
     },
     {
         "id": 5,
         "user": "kiisumiisu",
-        "userpicture": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
+        "userIcon": "vudinad_ja_vidinad/fast-cat-cat-excited.gif",
         "title": "cheeze",
         "text": "rat eat cheese i think",
-        "postimage": "",
+        "postImage": "",
         "dislikes": 56,
-        "is_pinned": false,
-        "time": "2023-10-17"
+        "isPinned": false,
+        "date": "2023-10-17"
     },
     {
         "id": 6,
         "user": "xX--cutekitten--Xx",
-        "userpicture": "vudinad_ja_vidinad/roosimiisu.jpg",
+        "userIcon": "vudinad_ja_vidinad/roosimiisu.jpg",
         "title": "UUS KASS",
         "text": "ma leidsin uue video ühest vahvast kiisust :3",
-        "postimage": "vudinad_ja_vidinad/kiizu.gif",
+        "postImage": "vudinad_ja_vidinad/kiizu.gif",
         "dislikes": 198037,
-        "is_pinned": true,
-        "time": "2015-07-07"
+        "isPinned": true,
+        "date": "2015-07-07"
     },
     {
         "id": 7,
         "user": "C00l_G4m3r_1",
-        "userpicture": "vudinad_ja_vidinad/emptyavatar.jpg",
+        "userIcon": "vudinad_ja_vidinad/emptyavatar.jpg",
         "title": "Obama gaming",
         "text": "gamebama",
-        "postimage": "vudinad_ja_vidinad/obam.jpg",
+        "postImage": "vudinad_ja_vidinad/obam.jpg",
         "dislikes": 101,
-        "is_pinned": false,
-        "time": "2023-10-07"
+        "isPinned": false,
+        "date": "2023-10-07"
     },
     {
         "id": 8,
         "user": "ben",
-        "userpicture": "vudinad_ja_vidinad/kass2.jpeg",
+        "userIcon": "vudinad_ja_vidinad/kass2.jpeg",
         "title": "CONTROVERSIAL TAKE",
         "text": "electric stoves aren’t real btw they’re placebo stoves. your food cooks because of the placebo effect ",
-        "postimage": "",
+        "postImage": "",
         "dislikes": 8,
-        "is_pinned": false,
-        "time": "2023-04-20"
+        "isPinned": false,
+        "date": "2023-04-20"
     },
     {
         "id": 9,
         "user": "mayonnaise",
-        "userpicture": "vudinad_ja_vidinad/emptyavatar.jpg",
+        "userIcon": "vudinad_ja_vidinad/emptyavatar.jpg",
         "title": "Me Irl",
         "text": "Just Like Me Haha",
-        "postimage": "vudinad_ja_vidinad/cowboy.jpg",
+        "postImage": "vudinad_ja_vidinad/cowboy.jpg",
         "dislikes": 3,
-        "is_pinned": false,
-        "time": "2022-12-31"
+        "isPinned": false,
+        "date": "2022-12-31"
     },
     {
         "id": 10,
         "user": "säga",
-        "userpicture": "vudinad_ja_vidinad/säga.jpg",
+        "userIcon": "vudinad_ja_vidinad/säga.jpg",
         "title": "Hei",
         "text": "mulle väga meeldib säga",
-        "postimage": "vudinad_ja_vidinad/halloween.jpg",
+        "postImage": "vudinad_ja_vidinad/halloween.jpg",
         "dislikes": 19,
-        "is_pinned": false,
-        "time": "2023-10-31"
+        "isPinned": false,
+        "date": "2023-10-31"
     }
-]
+]}

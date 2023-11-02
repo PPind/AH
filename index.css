@@ -1,3 +1,11 @@
+/*jou jou karl siin.. mul on mõni mureke selle lehega :/ 
+1. Ma ei oska panna kuup'eva olema postituse paremas nurgas, samal real pealkirjaga. tal on float right, aga ta ei floati right! 
+    Ma kardan, et see on mingi flexboxi kamm...
+2. Ülemine banner ei näe kena välja kitsa ekraani peal, aga seal on ka flexbox ja ma olen flexboxiga abitu!!!
+3. Leegid ulatuvad oma aside-ist allapoole välja
+4. Dislike'id peab ka tegema!!!
+*/
+
 .main {
     background-color: rgb(255, 217, 252);
     margin: 30px auto;
@@ -52,6 +60,7 @@
 
 .postHeader {
     width: 95%;
+    margin: auto;
     padding: 1%;
     display: flex;
     flex-direction: row;
@@ -60,27 +69,44 @@
     display: flex;
     flex-direction: row;
 }
-.post * h1 {
-    margin-left: auto;
-    float: right;
+.title {
+    padding-right: 8px;
+    font-size: 20px;
 }
 
 .post h1::first-letter {
-    font-size: 30px;
+    font-size: 25px;
     color: hotpink;
 }
 
-.postIcon {
+.userIcon {
     float: left;
-    max-height: 150px;
-    width: auto;
+    height: 50px;
+    width: 50px;
     margin: 5px 5px 5px 0;
-    padding-right: 2%;
-    
+    padding-right: 2%;   
+}
+
+.postImage {
+    float: left;
+    max-width: 30%;
+    object-fit: contain;
+    margin: 5px 5px 5px 0;
+    padding-right: 2%;   
 }
 
 .leegid {
     width: 100%;
     height: 100%;
     background-image: url(vudinad_ja_vidinad/leegid.gif);
+}
+
+.pinned {
+    color: hotpink;
+}
+
+.date {
+    float: right;
+    padding-left: 4px;
+    border-left: 2px solid black;
 }
