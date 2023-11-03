@@ -39,6 +39,22 @@ header {
     text-align: left;
     display: inline;
 }
+footer{
+    margin: auto;
+    float: left;
+    display: inline;
+}
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    background-color: hotpink;
+    width: 100%;
+    height: 70px;
+    padding-top: 1%;
+    padding-left: 30px;
+    position: sticky;
+}
 .icon {
     height: 60px;
     width: auto;
