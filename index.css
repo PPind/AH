@@ -12,6 +12,7 @@
     max-width: 60%;
     border-radius: 15px;
     flex-direction: row;
+    display: block;
 }
 
 .aside1, .aside2 {
