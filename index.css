@@ -71,6 +71,8 @@
     flex-direction: row;
 }
 .postContent {
+    border-radius: 15px;
+    background-color: rgb(245, 189, 240);
     display: flex;
     flex-direction: column;
 }
