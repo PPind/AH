@@ -119,5 +119,16 @@
         "dislikes": 20,
         "isPinned": false,
         "date": "2003-10-05"
+    },
+    {
+        "id": 12,
+        "user": "ben",
+        "userIcon": "vudinad_ja_vidinad/kass2.jpeg",
+        "title": "a margeician never reveals her tricks homie",
+        "text": "bottom text",
+        "postImage": "",
+        "dislikes": 39,
+        "isPinned": false,
+        "date": "2023-04-20"
     }
 ]}

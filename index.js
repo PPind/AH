@@ -84,7 +84,6 @@ fetch('json/jason.json')
                 postContentDiv.appendChild(postTextP);
 
                 
-                
                 var postDislikesImg = document.createElement('img');
                 postDislikesImg.setAttribute('class', 'dislikesImg');
                 postDislikesImg.setAttribute('src', "vudinad_ja_vidinad/dislike.png");
