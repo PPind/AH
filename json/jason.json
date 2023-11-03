@@ -108,5 +108,16 @@
         "dislikes": 19,
         "isPinned": false,
         "date": "2023-10-31"
+    },
+    {
+        "id": 11,
+        "user": "säga",
+        "userIcon": "vudinad_ja_vidinad/säga.jpg",
+        "title": "Mamma mia",
+        "text": "Taste for cheesening",
+        "postImage": "vudinad_ja_vidinad/chef.jpg",
+        "dislikes": 20,
+        "isPinned": false,
+        "date": "2003-10-05"
     }
 ]}

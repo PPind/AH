@@ -60,6 +60,10 @@
     padding: 20px;
 }
 
+.postPinned{
+    float: left;
+}
+
 .postHeader {
     width: 95%;
     margin: auto;
@@ -69,7 +73,13 @@
 }
 .postContent {
     display: flex;
+    flex-direction: column;
+}
+
+.postDislikes{
+    display: flex;
     flex-direction: row;
+    text-align: left;
 }
 .title {
     padding-right: 8px;
@@ -78,7 +88,7 @@
 
 .post h1::first-letter {
     font-size: 25px;
-    color: hotpink;
+    color: rgb(174, 47, 111);
 }
 
 .userIcon {
@@ -90,8 +100,8 @@
 }
 
 .postImage {
-    float: left;
-    max-width: 30%;
+    align-self: center;
+    max-width: 60%;
     object-fit: contain;
     margin: 5px 5px 5px 0;
     padding-right: 2%;   
@@ -105,11 +115,23 @@
 }
 
 .pinned {
-    color: hotpink;
+    color: rgb(174, 47, 111);
+    margin:0;
 }
 
 .date {
     float: right;
     padding-left: 4px;
     border-left: 2px solid black;
+}
+
+.dislikesImg{
+    height:10%;
+    width: 10%;
+    display: inline;
+}
+.postDislikesP{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline;
 }
