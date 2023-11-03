@@ -83,14 +83,21 @@ fetch('json/jason.json')
                 
                 postContentDiv.appendChild(postTextP);
 
-                var postDislikesP = document.createElement('p');
-                postDislikesP.setAttribute('class', 'postDislikesP');
-                postDislikesP.textContent = dislikes;
+                
                 
                 var postDislikesImg = document.createElement('img');
                 postDislikesImg.setAttribute('class', 'dislikesImg');
                 postDislikesImg.setAttribute('src', "vudinad_ja_vidinad/dislike.png");
                 postDislikesImg.setAttribute('alt', 'dislikes');
+
+                //postDislikesImg.addEventListener('click', function(event){
+                //  post.dislikes++;
+                //})
+
+                var postDislikesP = document.createElement('p');
+                postDislikesP.setAttribute('class', 'postDislikesP');
+                postDislikesP.textContent = dislikes;
+
                 postDislikesDiv.appendChild(postDislikesImg)
                 postDislikesDiv.appendChild(postDislikesP);
 
