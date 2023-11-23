@@ -3,8 +3,8 @@ function ISO8601ToText(ISOdate) {
     var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
 }
-//fetch('https://ppind.github.io/AH/json/jason.json')
-fetch('json/jason.json')
+fetch('https://ppind.github.io/AH/json/jason.json')
+//fetch('json/jason.json')
         .then((response) => response.json())
         .then(json => {
             console.log(json);
