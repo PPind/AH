@@ -1,6 +1,27 @@
 <template>
     <div class = "postComp">
-        <div class = "post" v-for = "post in postList" :key="id">
+        <div v-if = "hasPinnedPost">
+            <div class="post">
+                <h2 class="pinned">PINNED:</h2>
+                <div class = "postHeader">
+                    <img class = "userIcon" :src = "pinnedPost.userIcon"/>
+                    <p class = "userName">{{ pinnedPost.user }}</p>
+                    <p class="date">{{ pinnedPost.transformedDate }}</p>
+                </div>
+                <div class="postContent">
+                    <h1 class = "title">{{ pinnedPost.title }}</h1>
+                    <img class="postImage" :src= "pinnedPost.postImage"/>
+                    <p>{{ pinnedPost.text }}</p>
+                </div>
+                
+                <div class = "postDislikes">
+                    <img class = "dislikesImg" src="../assets/dislike.png"/>
+                    <p class = "postDislikesP">{{ pinnedPost.dislikes }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "post" v-for = "post in nonPinnedPosts" :key="id">
             <div class = "postHeader">
                 <img class = "userIcon" :src = "post.userIcon"/>
                 <p class = "userName">{{ post.user }}</p>
@@ -16,8 +37,8 @@
                 <img class = "dislikesImg" src="../assets/dislike.png"/>
                 <p class = "postDislikesP">{{ post.dislikes }}</p>
             </div>
-
         </div>
+
     </div>
 </template>
 
@@ -26,14 +47,23 @@ export default {
 name: "Post",
 computed: {
     postList(){
-    return this.$store.state.postList.map(post => {
-        return {
-            ...post,
-            transformedDate : this.ISO8601ToText(post.date)
-        }
-    })
-}
-}, 
+        return this.$store.state.postList.map(post => {
+            return {
+                ...post,
+                transformedDate : this.ISO8601ToText(post.date)
+            }
+        })
+    },
+    hasPinnedPost() {
+        return this.postList && this.postList.length > 0 && this.postList.some(post => post.isPinned);
+    },
+    pinnedPost() {
+        return this.postList && this.postList.find(post => post.isPinned);
+    },
+    nonPinnedPosts() {
+        return this.postList ? this.postList.filter(post => !post.isPinned) : [];
+    }
+},
 methods: {
     ISO8601ToText(ISOdate) {
       var chunks = ISOdate.split('-');
@@ -56,7 +86,7 @@ methods: {
 }
 
 .postPinned{
-    float: left;
+    
 }
 
 .postHeader {
@@ -111,8 +141,8 @@ methods: {
 }
 
 .pinned {
+    float: left;
     color: rgb(174, 47, 111);
-    margin:0;
 }
 
 .date {
