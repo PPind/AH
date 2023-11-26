@@ -26,7 +26,6 @@ footer{
     background-color: rgb(255, 144, 200);
     width: 100%;
     height: 50px;
-    
     padding-left: 30px;
     position: sticky;
     align-items: center;

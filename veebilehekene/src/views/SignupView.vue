@@ -93,6 +93,9 @@ data: function() {
 </script>
 
 <style>
+.signup {
+  height: 70vh;
+}
 .tekst{
     text-align: center;
     font-size: 110%;
