@@ -15,7 +15,7 @@
 
 <script>
 export default {
-name: "Aside",
+name: "AsideXD",
 data: function() {
 return {
 }}}
