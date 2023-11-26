@@ -5,7 +5,7 @@ export default createStore({
 
   state: {
     postList:[
-      {id:1, user: "kiisumiisu", userIcon: "AH/veebilehekene/src/assets/fast-cat-cat-excited.gif", title: "cheeze", text: "rat eat cheese i think", postImage: "@/vudinad_ja_vidinad/badrats.jpg", dislikes: 5, isPinned: false, date: "2006-10-23"},
+      {id:1, user: "kiisumiisu", userIcon: "fast-cat-cat-excited.gif", title: "cheeze", text: "rat eat cheese i think", postImage: "@/vudinad_ja_vidinad/badrats.jpg", dislikes: 5, isPinned: false, date: "2006-10-23"},
       {id:2, user: "kassimassi", userIcon: "../assets/neutraalnekass.jpg", title: "hiii", text: "MA OLEN VÄIKE SILLY KASS KES ELAB SU PEA SEES IHHIHIHIHIH", postImage: "", dislikes: 160549, isPinned: true, date: "2023-10-01"},
       {id:3, user: "hatman43", userIcon: "../assets/hatman.jpg", title: "Hats cheap price in the world : D", text: "Inshallah i sell hat. hat good quality. never fallen off head of anyone. good hats and cheap price too : )", postImage: "vudinad_ja_vidinad/hat.jpg", dislikes: 0, isPinned: false, date: "2023-09-01"},
       {id:4, user: "GloomRaven", userIcon: "../assets/gerry2.gif", title: "my meow meow", text: "look at my meow meow", postImage: "@/vudinad_ja_vidinad/gerry4.jpg", dislikes: 13, isPinned: false, date: "2023-10-31"},
