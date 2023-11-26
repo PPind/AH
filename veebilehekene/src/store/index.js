@@ -23,10 +23,11 @@ export default createStore({
   getters: {
   },
   mutations: {
-    IncreaseDislike: state => {
-      state.postList.forEach(post => {
-          post.dislikes += 1;
-      })
+    IncreaseDislike: function(state, postID) {
+      const post = state.postList.find(post => post.id === postID);
+      if (post) {
+        post.dislikes += 1;
+      }
   },
     ResetDislikes: state => {
       state.postList.forEach(post =>{
@@ -36,9 +37,9 @@ export default createStore({
 
   },
   actions: {
-    IncreasePriceAct: act => {
+    IncreaseDislikeAct: (act, postID) => {
       setTimeout(function() {
-          act.commit("IncreaseDislike")
+          act.commit("IncreaseDislike", postID)
       }, 10)
   },
   ResetAct: act => {

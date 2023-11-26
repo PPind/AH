@@ -33,7 +33,6 @@ ResetDislikes: function() {
     this.$store.dispatch("ResetAct")}
 }
 }
-
 </script>
 
 <style>
