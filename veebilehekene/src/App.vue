@@ -2,7 +2,7 @@
   <div class = "päis">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">Signup</router-link>
+      <router-link to="/signup">Signup</router-link>
     </nav>
   </div>
   <router-view/>
