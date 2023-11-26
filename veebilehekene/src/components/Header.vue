@@ -32,5 +32,27 @@ header {
     float: left;
     text-align: left;
     display: inline;
+    padding-bottom: 0%;
+}
+
+nav {
+    padding-top: 0.01%;
+    padding-bottom: 1%;
+}
+
+nav a {
+    font-size: 18px;
+    color: black;
+    padding: 0.05%;
+    padding-bottom: 0.05%;
+    border-radius: 15px;
+}
+
+nav a:link {
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: pink;
 }
 </style>
