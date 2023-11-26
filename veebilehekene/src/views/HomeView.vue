@@ -6,6 +6,7 @@
 
     <div class="main">
       <post></post>
+      <button v-on:click="ResetDislikes "> Reset </button>
     </div>
     
     
@@ -27,7 +28,12 @@ name: "Posts",
 components: {Post, AsideXD, HeaderXD, FooterXD},
 data: function() {
 return {}},
+methods: {
+ResetDislikes: function() {
+    this.$store.dispatch("ResetAct")}
 }
+}
+
 </script>
 
 <style>

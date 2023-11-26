@@ -23,8 +23,30 @@ export default createStore({
   getters: {
   },
   mutations: {
+    IncreaseDislike: state => {
+      state.postList.forEach(post => {
+          post.dislikes += 1;
+      })
+  },
+    ResetDislikes: state => {
+      state.postList.forEach(post =>{
+          post.dislikes = 0;
+      }) 
+    }
+
   },
   actions: {
+    IncreasePriceAct: act => {
+      setTimeout(function() {
+          act.commit("IncreaseDislike")
+      }, 10)
+  },
+  ResetAct: act => {
+    setTimeout(function() {
+        act.commit("ResetDislikes")
+    }, 10)
+}
+
   },
   modules: {
   }

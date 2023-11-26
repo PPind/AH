@@ -15,7 +15,7 @@
                 </div>
                 
                 <div class = "postDislikes">
-                    <img class = "dislikesImg" src="../assets/dislike.png"/>
+                    <img class = "dislikesImg" v-on:click="Increase" src="../assets/dislike.png"/>
                     <p class = "postDislikesP">{{ pinnedPost.dislikes }}</p>
                 </div>
             </div>
@@ -34,10 +34,11 @@
             </div>
             
             <div class = "postDislikes">
-                <img class = "dislikesImg" src="../assets/dislike.png"/>
+                <img class = "dislikesImg" v-on:click="Increase" src="../assets/dislike.png"/>
                 <p class = "postDislikesP">{{ post.dislikes }}</p>
             </div>
         </div>
+
 
     </div>
 </template>
@@ -71,8 +72,12 @@ methods: {
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
       ];
       return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
+    },
+    Increase: function() {
+        this.$store.dispatch("IncreasePriceAct")
+    },
     }
-}
+
 };
 </script>
 
