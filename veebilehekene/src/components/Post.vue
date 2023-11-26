@@ -8,7 +8,7 @@
             </div>
             <div class="postContent">
                 <h1 class = "title">{{ post.title }}</h1>
-                <img class="postImage" :src="post.postImage"/>
+                <img class="postImage" :src=post.postImage />
                 <p>{{ post.text }}</p>
             </div>
             
