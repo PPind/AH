@@ -85,10 +85,6 @@ methods: {
     padding: 20px;
 }
 
-.postPinned{
-    
-}
-
 .postHeader {
     width: 95%;
     margin: auto;

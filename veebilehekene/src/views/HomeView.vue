@@ -1,4 +1,5 @@
 <template>
+  <header-x-d></header-x-d>
   <div class="home">
 
     <aside-x-d class = "aside1"></aside-x-d>
@@ -11,16 +12,19 @@
     <aside-x-d class = "aside2"></aside-x-d>
 
   </div>
+  <footer-x-d></footer-x-d>
 </template>
 
 <script>
 // @ is an alias to /sr
 import Post from '@/components/Post.vue'
 import AsideXD from '@/components/Aside.vue'
+import HeaderXD from '@/components/Header.vue'
+import FooterXD from '@/components/Footer.vue'
 
 export default {
 name: "Posts",
-components: {Post, AsideXD},
+components: {Post, AsideXD, HeaderXD, FooterXD},
 data: function() {
 return {}},
 }

@@ -1,4 +1,5 @@
 <template>
+  <header-x-d></header-x-d>
   <div class="signup">
     <div class="main">
         <div class="tekst">
@@ -20,16 +21,19 @@
                     <button>Sign up </button>
                 </div>  
             </form> 
-            
         </div>
     </div>
   </div>
+  <footer-x-d></footer-x-d>
 </template>
 
 <script>
+import HeaderXD from '@/components/Header.vue'
+import FooterXD from '@/components/Footer.vue'
+
 export default {
 name: "SignupView", 
-
+components: {HeaderXD, FooterXD},
 data: function() {
     return {
       email:'',

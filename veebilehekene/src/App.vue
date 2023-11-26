@@ -1,14 +1,6 @@
 <template>
     <div class="wrapper">
-        <div class = "päis">
-            <header>≽^•⩊•^≼</header>
-            <nav>
-            <router-link to="/">Home</router-link> |
-            <router-link to="/signup">Signup</router-link>
-            </nav>
-        </div>
         <router-view/>
-        <footer class = "footer"></footer>
     </div>
 </template>
 
@@ -43,38 +35,6 @@ body {
     border-radius: 15px;
 }
 
-.päis {
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(255, 144, 200);
-    width: 100%;
-    height: 80px;
-    padding-top: 0.25%;
-    position: sticky;
-
-}
-header {
-    font-size: 25px;
-    margin: auto;
-    float: left;
-    text-align: left;
-    display: inline;
-}
-footer{
-    margin: auto;
-    float: left;
-    display: inline;
-}
-
-.footer{
-    display: flex;
-    background-color: rgb(255, 144, 200);
-    width: 100%;
-    height: 50px;
-    padding-top: 1%;
-    padding-left: 30px;
-    position: sticky;
-}
 .icon {
     height: 60px;
     width: 60px;
