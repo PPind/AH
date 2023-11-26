@@ -1,4 +1,5 @@
 <template>
+    <div>
   <div class = "päis">
     <nav>
       <router-link to="/">Home</router-link> |
@@ -6,12 +7,11 @@
     </nav>
   </div>
   <router-view/>
-  <footer class = "footer"></footer>
+  <footer class = "footer"></footer></div>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
