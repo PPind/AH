@@ -5,7 +5,7 @@
     <aside-x-d class = "aside1"></aside-x-d>
 
     <div class="main">
-      <button v-on:click="Logout"> Logout </button>
+      <button @click='this.$router.push("/login")'> Logout </button>
       <post></post>
       <button v-on:click="ResetDislikes "> Reset </button>
     </div>
@@ -40,7 +40,7 @@ ResetDislikes: function() {
 .main {
     background-color: rgb(255, 217, 252);
     margin: 10px auto;
-    padding: 10px 20px;
+    padding: 1.5% 1.5%;
     min-width: 350px;
     max-width: 60%;
     border-radius: 15px;
