@@ -3,7 +3,7 @@
   <div class="signup">
     <div class="main">
         <div class="tekst">
-            <h1 id = "hId">Welcome to CoolSite ! :3</h1>
+            <h1 id = "hId">Welcome to cool site ! :3</h1>
             
             <h1>Create a new account:</h1>
             <form @submit.prevent ="submitForm">
@@ -46,7 +46,7 @@ data: function() {
     validateForm(){
     
     const errors = []
-    const length = this.password.length>= 8 && this.password.length<= 15
+    const length = this.password.length>= 8 && this.password.length< 15
     const upper = /[A-Z]/.test(this.password)
     const lowers = /[a-z].*[a-z]/.test(this.password)
     const numer = /[0-9]/.test(this.password)
