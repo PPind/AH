@@ -5,6 +5,7 @@
     <aside-x-d class = "aside1"></aside-x-d>
 
     <div class="main">
+      <button v-on:click="Logout"> Logout </button>
       <post></post>
       <button v-on:click="ResetDislikes "> Reset </button>
     </div>
@@ -67,4 +68,5 @@ ResetDislikes: function() {
     overflow: hidden;
     border-radius: 15px;
 }
+
 </style>
