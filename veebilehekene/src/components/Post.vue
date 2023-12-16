@@ -1,27 +1,7 @@
 <template>
     <div class = "postComp">
-        <div v-if = "hasPinnedPost">
-            <div class="post">
-                <h2 class="pinned">PINNED:</h2>
-                <div class = "postHeader">
-                    <img class = "userIcon" :src = "pinnedPost.userIcon"/>
-                    <p class = "userName">{{ pinnedPost.user }}</p>
-                    <p class="date">{{ pinnedPost.transformedDate }}</p>
-                </div>
-                <div class="postContent">
-                    <h1 class = "title">{{ pinnedPost.title }}</h1>
-                    <img class="postImage" :src= "pinnedPost.postImage"/>
-                    <p>{{ pinnedPost.text }}</p>
-                </div>
-                
-                <div class = "postDislikes">
-                    <img class = "dislikesImg" v-on:click="Increase(pinnedPost.id)" src="../assets/dislike.png"/>
-                    <p class = "postDislikesP">{{ pinnedPost.dislikes }}</p>
-                </div>
-            </div>
-        </div>
-
-        <div class = "post" v-for = "post in nonPinnedPosts" :key="id">
+        <div class = "post" v-for = "post in sortedPosts" :key="id">
+            <h2 v-if = "post.isPinned" class="pinned">PINNED:</h2>
             <div class = "postHeader">
                 <img class = "userIcon" :src = "post.userIcon"/>
                 <p class = "userName">{{ post.user }}</p>
@@ -55,6 +35,18 @@ computed: {
             }
         })
     },
+    sortedPosts() {
+    // Sort posts by pinned status (pinned first) and then by date
+    return this.postList.slice().sort((a, b) => {
+      if (a.isPinned !== b.isPinned) {
+        return b.isPinned - a.isPinned; // Pinned posts come first
+      }
+      // Convert ISO 8601 dates to Date objects for comparison
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB - dateA; // Sort by date if not pinned
+    });
+  },
     hasPinnedPost() {
         return this.postList && this.postList.length > 0 && this.postList.some(post => post.isPinned);
     },
