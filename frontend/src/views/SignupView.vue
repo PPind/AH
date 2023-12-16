@@ -6,21 +6,17 @@
             <h1 id = "hId">Welcome to cool site ! :3</h1>
             
             <h1>Create a new account:</h1>
-            <form @submit.prevent ="submitForm">
-                <label for="email">E-mail:</label>
-                <input type="email" v-model ="email" required placeholder="E-mail"><br><br>
-                <label for="parool" >Password:</label>
-                <input type="password" required placeholder="Password" v-model = "password"><br><br>  
-                <div v-if="validatePassword">
-                  {{validatePassword}}
-                    <ul>
-                      <li v-for="error in errors" :key="error">{{ error }}</li>
-                    </ul>
-                </div>
-                <div class="submit">
-                    <button>Sign up </button>
-                </div>  
-            </form> 
+              <label for="email">E-mail:</label>
+              <input type="email" required v-model ="email" placeholder="E-mail"><br><br>
+              <label for="parool" >Password:</label>
+              <input type="password" required v-model = "password" placeholder="Password"><br><br>  
+              <div v-if="validatePassword">
+                {{validatePassword}}
+                  <ul>
+                    <li v-for="error in errors" :key="error">{{ error }}</li>
+                  </ul>
+              </div>
+              <button @click="SignUp" class="SignUp">SignUp</button>
         </div>
     </div>
   </div>
@@ -125,6 +121,7 @@ data: function() {
     text-align: center;
     font-size: 110%;
     padding-top: 2%;
+    padding-bottom: 4%;
 }
 
 #hId{

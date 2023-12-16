@@ -5,7 +5,7 @@
     <aside-x-d class = "aside1"></aside-x-d>
 
     <div class="main">
-      <button @click='this.$router.push("/login")'> Logout </button>
+      <button v-if = "authResult" @click="Logout">Logout</button>
       <post></post>
       <button v-on:click="ResetDislikes "> Reset </button>
     </div>
@@ -23,17 +23,37 @@ import Post from '@/components/Post.vue'
 import AsideXD from '@/components/Aside.vue'
 import HeaderXD from '@/components/Header.vue'
 import FooterXD from '@/components/Footer.vue'
+import auth from "../auth";
 
 export default {
 name: "Posts",
 components: {Post, AsideXD, HeaderXD, FooterXD},
 data: function() {
-return {}},
+
+return {authResult: auth.authenticated()}},
 methods: {
 ResetDislikes: function() {
     this.$store.dispatch("ResetAct")}
-}
-}
+},
+Logout() {
+      fetch("http://localhost:3000/auth/logout", {
+          credentials: 'include', //  Don't forget to specify this if you need cookies
+      })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        console.log('jwt removed');
+        //console.log('jwt removed:' + auth.authenticated());
+        this.$router.push("/login");
+        //location.assign("/");
+      })
+      .catch((e) => {
+        console.log(e);
+        console.log("error logout");
+      });
+    },
+  }
+
 </script>
 
 <style>
