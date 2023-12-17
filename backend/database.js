@@ -6,6 +6,7 @@
      database: "basedAH",// ma ei tea kuidas andmebaasid töötavad btw
      host: "localhost", 
      port: "5433"
+
  });
  
  const execute = async(query) => {
