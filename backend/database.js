@@ -5,7 +5,7 @@
      password: "3l3v4nd1Mees",
      database: "basedAH",// ma ei tea kuidas andmebaasid töötavad btw
      host: "localhost", 
-     port: "5433"
+     port: "5432"
 
  });
  
