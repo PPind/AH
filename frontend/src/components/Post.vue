@@ -10,7 +10,7 @@
                   <h1 class = "title">{{ post.title }}</h1>
                 </router-link>
                 <img class="postImage" :src=post.postImage />
-                <p>{{ post.text }}</p>
+                <p>{{ post.body }}</p>
             </div>
             <!--
             <div class = "postDislikes">
