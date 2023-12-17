@@ -23,7 +23,10 @@
     </div>
 </template>
 
+
+
 <script>
+import auth  from "../auth"
     export default {
         name: "Post",
         computed: {
@@ -50,6 +53,11 @@
                 });
             }
         },
+        data: function() {
+
+            return {
+            authResult: auth.authenticated()
+        }},
         methods: {
             ISO8601ToText(ISOdate) {
                 var chunks = ISOdate.split('-');
@@ -69,6 +77,9 @@
                 .catch((err) => console.log(err.message));
             },
             updatePost() {
+                if (!this.authResult) {
+                    this.$router.push("/login");
+                }
             // using Fetch - put method - updates a specific post based on the passed id and the specified body
             fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
                 method: "PUT",
@@ -81,7 +92,7 @@
                 console.log(response.data);
                 //this.$router.push("/apost/" + this.post.id);
                 // We are using the router instance of this element to navigate to a different URL location
-                this.$router.push("/api/allposts");
+                this.$router.push("/");
                 })
                 .catch((e) => {
                 console.log(e);
@@ -96,7 +107,7 @@
                 .then((response) => {
                 console.log(response.data);
                 // We are using the router instance of this element to navigate to a different URL location
-                this.$router.push("/api/allposts");
+                this.$router.push("/");
                 })
                 .catch((e) => {
                 console.log(e);

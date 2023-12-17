@@ -3,7 +3,7 @@
     <div class="main">
       <h3>Add a Post</h3>
       <div class="addpost">
-      <div class="form">
+      <div class="addpost-form">
         <label for="title">Title: </label>
         <input name="title" type="text" id="title" required v-model="post.title" />
         <label for="body">Body: </label>
@@ -16,23 +16,29 @@
   </template>
   
   <script>
-  import HeaderXD from '@/components/Header.vue'
+    import HeaderXD from '@/components/Header.vue'
     import FooterXD from '@/components/Footer.vue'
+    import auth from '../auth';
 
   export default {
     name: "AboutView",
     components: { HeaderXD, FooterXD},
-    data() {
-      return {
-        post: {
-          title: "",
-          body: "",
-          urllink: "",
+    data: function() {
+
+        return {
+            authResult: auth.authenticated(),
+            post: {
+                title: "",
+                body: "",
+                urllink: "",
         },
-      };
+        }
     },
     methods: {
       addPost() {
+        if (!this.authResult) {
+            this.$router.push("/login");
+        }
         var data = {
           title: this.post.title,
           body: this.post.body,
@@ -63,19 +69,21 @@
 <style>
 
 
-#addpost container {
-display: flex;
-justify-content: center;
-height: 20vh;
-padding-top: 1%;
-margin-left: 2%;
+.addpost-container {
+  display: flex;
+  flex-direction: column; /* Changed to column */
+  justify-content: center;
+  height: 80vh;
+  padding-top: 1%;
+  margin-left: 2%;
 }
 
-#addpost form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 5vh;
+.addpost-form {
+  display: flex;
+  flex-direction: column; /* Changed to column */
+  align-items: center;
+  padding: 5vh;
+  padding-bottom: 5vh;
 }
 
 #addpost input {

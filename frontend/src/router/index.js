@@ -41,7 +41,15 @@ const routes = [
   {
     path: '/addpost',
     name: 'addpost',
-    component: AddpostView
+    component: AddpostView,
+    beforeEnter: async(to, from, next) => {
+      let authResult = await auth.authenticated();
+      if (!authResult) {
+          next('/login')
+      } else {
+          next();
+      }
+  }
   },
   {
     path: "/posts/:id",
