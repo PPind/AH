@@ -3,8 +3,6 @@
         <div class = "post" v-for = "post in sortedPosts" :key="id">
             <h2 v-if = "post.isPinned" class="pinned">PINNED:</h2>
             <div class = "postHeader">
-                <img class = "userIcon" :src = "post.userIcon"/>
-                <p class = "userName">{{ post.user }}</p>
                 <p class="date">{{ post.transformedDate }}</p>
             </div>
             <div class="postContent">
@@ -14,11 +12,12 @@
                 <img class="postImage" :src=post.postImage />
                 <p>{{ post.text }}</p>
             </div>
-            
+            <!--
             <div class = "postDislikes">
                 <img class = "dislikesImg" v-on:click="Increase(post.id)" src="../assets/dislike.png"/>
                 <p class = "postDislikesP">{{ post.dislikes }}</p>
             </div>
+        -->
         </div>
 
 
@@ -38,7 +37,7 @@ computed: {
         return this.posts.map(post => {
             return {
                 ...post,
-                transformedDate : this.ISO8601ToText(post.date)
+                //transformedDate : this.ISO8601ToText(post.date)
             }
         })
     },

@@ -36,13 +36,9 @@
     },
     methods: {
       addPost() {
-        if (!this.authResult) {
-            this.$router.push("/login");
-        }
         var data = {
           title: this.post.title,
           body: this.post.body,
-          urllink: this.post.urllink,
         };
         // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
         fetch("http://localhost:3000/api/posts", {
