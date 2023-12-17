@@ -100,14 +100,6 @@ export default {
     border-radius: 15px;
 }
 
-button {
-  background-color: rgb(255, 144, 200);
-  font-size: 15px;
-  border: none;
-  border-radius: 15px;
-  width: 7vw;
-  height: 4vh;
-}
 
 .nupud {
   display: flex;

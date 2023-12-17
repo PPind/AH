@@ -12,8 +12,8 @@
             <label for="parool" >Password:</label>
             <input type="password" required placeholder="Password" v-model = "password"><br><br> 
             <div class="container">
-                <button @click="LogIn"  class="center">Log in</button>
-                <button @click='this.$router.push("/signup")' class="center">Sign up</button>
+                <button @click="LogIn"  >Log in</button>
+                <button @click='this.$router.push("/signup")' >Sign up</button>
             </div>
             
         </div>
@@ -71,8 +71,9 @@ LogIn() {
 
 <style>
 
+
 .login {
-  height: 100vh;
+  height: 70vh;
 }
 .form{
     padding-top: 2%;
@@ -80,20 +81,13 @@ LogIn() {
     font-size: 110%;
     padding-bottom: 4%;
 }
-
 #hId{
     
     color: rgb(184, 10, 103);
 }
-
 h1{
     font-size: 180%;
 }
-
-.main {
-    height: 80vh;
-}
-
 form{
     padding-bottom: 4%;
 }
