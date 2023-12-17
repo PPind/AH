@@ -37,7 +37,7 @@ computed: {
         return this.posts.map(post => {
             return {
                 ...post,
-                //transformedDate : this.ISO8601ToText(post.date)
+                transformedDate : this.ISO8601ToText(post.date)
             }
         })
     },
