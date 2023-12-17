@@ -28,9 +28,14 @@
 <script>
 export default {
 name: "Post",
+data() {
+    return {
+      posts: [],
+    };
+},    
 computed: {
     postList(){
-        return this.$store.state.postList.map(post => {
+        return this.posts.map(post => {
             return {
                 ...post,
                 transformedDate : this.ISO8601ToText(post.date)
@@ -49,15 +54,6 @@ computed: {
       return dateB - dateA; // Sort by date if not pinned
     });
   },
-    hasPinnedPost() {
-        return this.postList && this.postList.length > 0 && this.postList.some(post => post.isPinned);
-    },
-    pinnedPost() {
-        return this.postList && this.postList.find(post => post.isPinned);
-    },
-    nonPinnedPosts() {
-        return this.postList ? this.postList.filter(post => !post.isPinned) : [];
-    }
 },
 methods: {
     ISO8601ToText(ISOdate) {
@@ -70,7 +66,17 @@ methods: {
     Increase(postID) {
         this.$store.dispatch("IncreaseDislikeAct", postID)
     },
-    }
+    fetchPosts() {
+      fetch(`http://localhost:3000/api/posts/`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
+    },
+},
+mounted() {
+    this.fetchPosts();
+    console.log("mounted");
+},
 
 };
 </script>
