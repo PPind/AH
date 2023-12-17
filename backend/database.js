@@ -5,7 +5,7 @@
      password: "3l3v4nd1Mees",
      database: "basedAH",// ma ei tea kuidas andmebaasid töötavad btw
      host: "localhost", 
-     port: "5433"
+     port: "5432"
  });
  
  const execute = async(query) => {
@@ -56,15 +56,10 @@ execute(createTblQuery1).then(result => {
     }
 });
 
+// A function to execute the previous query   
 execute(createTblQuery2).then(result => {
     if (result) {
-        console.log('If does not exists, table "users" is created');
-    }
-});
-
-execute(addPostsQuery).then(result => {
-    if (result) {
-        console.log('Adds a few sample posts to the "posttable" table');
+        console.log('If does not exists, create the "posttable" table');
     }
 });
 module.exports = pool;

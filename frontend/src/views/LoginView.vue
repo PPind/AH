@@ -72,7 +72,7 @@ LogIn() {
 <style>
 
 .login {
-  height: 70vh;
+  height: 100vh;
 }
 .form{
     padding-top: 2%;
@@ -88,6 +88,10 @@ LogIn() {
 
 h1{
     font-size: 180%;
+}
+
+.main {
+    height: 80vh;
 }
 
 form{
