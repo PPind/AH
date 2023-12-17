@@ -60,7 +60,8 @@ import auth  from "../auth"
         }},
         methods: {
             ISO8601ToText(ISOdate) {
-                var chunks = ISOdate.split('-');
+                var datePart = ISOdate.split('T')[0];
+                var chunks = datePart.split('-');
                 var months = [
                     'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
                 ];

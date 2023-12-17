@@ -2,10 +2,10 @@
  const Pool = require('pg').Pool;
  const pool = new Pool({
      user: "postgres",
-     password: "paroolfr",
+     password: "M42rru",
      database: "basedAH",
      host: "localhost", 
-     port: "5433"
+     port: "5432"
 
  });
  
@@ -31,9 +31,9 @@ const createTblQuery1 = `
 
 const createTblQuery2 = `
     CREATE TABLE IF NOT EXISTS "users" (
-        id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
-        email VARCHAR(200) NOT NULL UNIQUE,
-        password VARCHAR(200) NOT NULL 
+        "id" uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+        "email" VARCHAR(200) NOT NULL UNIQUE,
+        "password" VARCHAR(200) NOT NULL 
     );`;
 
 
