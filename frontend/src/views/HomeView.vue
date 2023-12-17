@@ -9,6 +9,7 @@
       <post></post>
       <div class="nupud">
         <button v-on:click="ResetDislikes "> Reset </button>
+        <button v-on:click="deleteAllPosts "> Delete All </button>
         <button @click='this.$router.push("/addpost")'>Add post</button>
       
       </div>
@@ -41,6 +42,13 @@ export default {
   ResetDislikes: function() {
       this.$store.dispatch("ResetAct")}
   ,
+  deleteAllPosts: function(){
+          fetch("http://localhost:3000/api/posts",{
+            method:"DELETE",
+            credentials:"include"
+          }).then(()=> window.location.reload())
+        }
+        ,
   redirectToAddPost() {
       // Redirect logic to a new page (replace '/new-page' with your desired route)
       this.$router.push('/addpost');
