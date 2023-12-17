@@ -1,14 +1,16 @@
 <template>
     <div class = "postComp">
         <div class = "post" v-for = "post in sortedPosts" :key="id">
-            <h2 v-if = "post.isPinned" class="pinned">PINNED:</h2>
+            <h2 v-if = "post.isPinned" class="pinned">PINNED:</h2>   
             <div class = "postHeader">
                 <img class = "userIcon" :src = "post.userIcon"/>
                 <p class = "userName">{{ post.user }}</p>
                 <p class="date">{{ post.transformedDate }}</p>
             </div>
             <div class="postContent">
-                <h1 class = "title">{{ post.title }}</h1>
+                <router-link :to="{name: 'APost', params: {id: post.id}}">
+                    <h1 class = "title">{{ post.title }}</h1>
+                </router-link>
                 <img class="postImage" :src=post.postImage />
                 <p>{{ post.text }}</p>
             </div>
@@ -18,58 +20,46 @@
                 <p class = "postDislikesP">{{ post.dislikes }}</p>
             </div>
         </div>
-
-
     </div>
 </template>
 
 <script>
 export default {
-name: "Post",
-computed: {
-    postList(){
-        return this.$store.state.postList.map(post => {
-            return {
-                ...post,
-                transformedDate : this.ISO8601ToText(post.date)
-            }
-        })
+    name: "Post",
+    computed: {
+        postList(){
+            return this.$store.state.postList.map(post => {
+                return {
+                    ...post,
+                    transformedDate : this.ISO8601ToText(post.date)
+                }
+            })
+        },
+        sortedPosts() {
+        // Sort posts by pinned status (pinned first) and then by date
+            return this.postList.slice().sort((a, b) => {
+                if (a.isPinned !== b.isPinned) {
+                    return b.isPinned - a.isPinned; // Pinned posts come first
+                }
+                // Convert ISO 8601 dates to Date objects for comparison
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return dateB - dateA; // Sort by date if not pinned
+            });
+        }
     },
-    sortedPosts() {
-    // Sort posts by pinned status (pinned first) and then by date
-    return this.postList.slice().sort((a, b) => {
-      if (a.isPinned !== b.isPinned) {
-        return b.isPinned - a.isPinned; // Pinned posts come first
-      }
-      // Convert ISO 8601 dates to Date objects for comparison
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateB - dateA; // Sort by date if not pinned
-    });
-  },
-    hasPinnedPost() {
-        return this.postList && this.postList.length > 0 && this.postList.some(post => post.isPinned);
-    },
-    pinnedPost() {
-        return this.postList && this.postList.find(post => post.isPinned);
-    },
-    nonPinnedPosts() {
-        return this.postList ? this.postList.filter(post => !post.isPinned) : [];
+    methods: {
+        ISO8601ToText(ISOdate) {
+            var chunks = ISOdate.split('-');
+            var months = [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ];
+            return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
+        },
+        Increase(postID) {
+            this.$store.dispatch("IncreaseDislikeAct", postID)
+        },
     }
-},
-methods: {
-    ISO8601ToText(ISOdate) {
-      var chunks = ISOdate.split('-');
-      var months = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
-      return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
-    },
-    Increase(postID) {
-        this.$store.dispatch("IncreaseDislikeAct", postID)
-    },
-    }
-
 };
 </script>
 
