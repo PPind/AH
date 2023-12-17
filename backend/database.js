@@ -5,7 +5,7 @@
      password: "M42rru",
      database: "basedAH",
      host: "localhost", 
-     port: "5433"
+     port: "5432"
 
  });
  

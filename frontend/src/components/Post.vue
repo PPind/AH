@@ -56,12 +56,13 @@ computed: {
 },
 methods: {
     ISO8601ToText(ISOdate) {
-      var chunks = ISOdate.split('-');
-      var months = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
-      return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
-    },
+                var datePart = ISOdate.split('T')[0];
+                var chunks = datePart.split('-');
+                var months = [
+                    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+                ];
+                return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
+            },
     Increase(postID) {
         this.$store.dispatch("IncreaseDislikeAct", postID)
     },

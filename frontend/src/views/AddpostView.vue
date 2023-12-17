@@ -35,9 +35,12 @@
     },
     methods: {
       addPost() {
+        var currentDate = new Date().toISOString().slice(0, 10); // Get current date in YYYY-MM-DD format
+
         var data = {
           title: this.post.title,
           body: this.post.body,
+          date: currentDate,
         };
         // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
         fetch("http://localhost:3000/api/posts", {
