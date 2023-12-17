@@ -7,7 +7,11 @@
     <div class="main">
       <button v-if = "authResult" @click="Logout">Logout</button>
       <post></post>
-      <button v-on:click="ResetDislikes "> Reset </button>
+      <div class="nupud">
+        <button v-on:click="ResetDislikes "> Reset </button>
+        <button @click='this.$router.push("/addpost")'>Add post</button>
+      
+      </div>
     </div>
     
     
@@ -37,6 +41,10 @@ export default {
   ResetDislikes: function() {
       this.$store.dispatch("ResetAct")}
   ,
+  redirectToAddPost() {
+      // Redirect logic to a new page (replace '/new-page' with your desired route)
+      this.$router.push('/addpost');
+    },
   Logout() {
         fetch("http://localhost:3000/auth/logout", {
             credentials: 'include', //  Don't forget to specify this if you need cookies
@@ -90,6 +98,20 @@ export default {
     max-width: 200px;
     overflow: hidden;
     border-radius: 15px;
+}
+
+button {
+  background-color: rgb(255, 144, 200);
+  font-size: 15px;
+  border: none;
+  border-radius: 15px;
+  width: 7vw;
+  height: 4vh;
+}
+
+.nupud {
+  display: flex;
+  justify-content: space-between;
 }
 
 </style>
