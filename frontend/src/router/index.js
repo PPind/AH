@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from "../views/LoginView.vue"
 import ContactView from "../views/ContactView.vue"
 import auth from "../auth"
+import APost from "@/views/APost.vue";
 
 const routes = [
   {
@@ -35,6 +36,12 @@ const routes = [
     path: '/contact',
     name: 'contact',
     component: ContactView
+  },
+  {
+    path: "/posts/:id",
+    name: "APost",
+    component: APost,
+    props: true,
   },
 ]
 

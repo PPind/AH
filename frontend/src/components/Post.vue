@@ -8,7 +8,9 @@
                 <p class="date">{{ post.transformedDate }}</p>
             </div>
             <div class="postContent">
-                <h1 class = "title">{{ post.title }}</h1>
+                <router-link :to="{name: 'APost', params: {id: post.id}}">
+                  <h1 class = "title">{{ post.title }}</h1>
+                </router-link>
                 <img class="postImage" :src=post.postImage />
                 <p>{{ post.text }}</p>
             </div>
