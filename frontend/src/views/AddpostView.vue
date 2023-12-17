@@ -35,9 +35,6 @@
     },
     methods: {
       addPost() {
-        if (!this.authResult) {
-            this.$router.push("/login");
-        }
         var data = {
           title: this.post.title,
           body: this.post.body,
