@@ -35,6 +35,7 @@ data: function() {
       email:'',
       password: '',
       validatePassword:'',
+      validated:false,
       errors:[],
   }},
   methods: {
@@ -68,8 +69,9 @@ data: function() {
       errors.push('Password must contain at least one underscore "_" !!! ')
     }
 
-    if (errors == []){
-      this.validatePassword = ""
+    if (errors.length === 0){
+      this.validatePassword = "" 
+      this.validated = true
     }else{
       this.errors = errors
       this.validatePassword = "Your password is not valid !!"   
@@ -81,10 +83,13 @@ data: function() {
     if (this.errors.length ===0){
       this.validatePassword ="Yippee !! New account successfully made !",
       this.password = "",
-      this.email = ""
+      this.email = "",
+      this.validated = true
     }
   },
   SignUp() {
+    this.validateForm();
+    if(this.validated){
       var data = {
         email: this.email,
         password: this.password
@@ -108,9 +113,11 @@ data: function() {
         console.log(e);
         console.log("error");
       });
+    }
+  }
     },
 }
-}
+
 </script>
 
 <style>
