@@ -5,7 +5,7 @@
      password: "3l3v4nd1Mees",
      database: "basedAH",// ma ei tea kuidas andmebaasid töötavad btw
      host: "localhost", 
-     port: "5432"
+     port: "5433"
  });
  
  const execute = async(query) => {
@@ -62,4 +62,12 @@ execute(createTblQuery2).then(result => {
         console.log('If does not exists, create the "posttable" table');
     }
 });
+
+execute(addPostsQuery).then(result => {
+    if (result) {
+        console.log('Adds a few sample posts to the database');
+    }
+});
+
+
 module.exports = pool;

@@ -27,56 +27,57 @@
 
 <script>
 export default {
-    name: "Post",
-    data() {
-        return {
-            posts: [],
-        };
+name: "Post",
+data() {
+    return {
+      posts: [],
+    };
+},    
+computed: {
+    postList(){
+        return this.posts.map(post => {
+            return {
+                ...post,
+                transformedDate : this.ISO8601ToText(post.date)
+            }
+        })
     },
-    computed: {
-        postList(){
-            return this.posts.map(post => {
-                return {
-                    ...post,
-                    transformedDate : this.ISO8601ToText(post.date)
-                }
-            })
-        },
-        sortedPosts() {
-        // Sort posts by pinned status (pinned first) and then by date
-            return this.postList.slice().sort((a, b) => {
-                if (a.isPinned !== b.isPinned) {
-                    return b.isPinned - a.isPinned; // Pinned posts come first
-                }
-                // Convert ISO 8601 dates to Date objects for comparison
-                const dateA = new Date(a.date);
-                const dateB = new Date(b.date);
-                return dateB - dateA; // Sort by date if not pinned
-            });
-        }
+    sortedPosts() {
+    // Sort posts by pinned status (pinned first) and then by date
+    return this.postList.slice().sort((a, b) => {
+      if (a.isPinned !== b.isPinned) {
+        return b.isPinned - a.isPinned; // Pinned posts come first
+      }
+      // Convert ISO 8601 dates to Date objects for comparison
+      const dateA = new Date(a.date);
+      const dateB = new Date(b.date);
+      return dateB - dateA; // Sort by date if not pinned
+    });
+  },
+},
+methods: {
+    ISO8601ToText(ISOdate) {
+      var chunks = ISOdate.split('-');
+      var months = [
+        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+      ];
+      return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
     },
-    methods: {
-        ISO8601ToText(ISOdate) {
-            var chunks = ISOdate.split('-');
-            var months = [
-                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-            ];
-            return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
-        },
-        Increase(postID) {
-            this.$store.dispatch("IncreaseDislikeAct", postID)
-        },
-        fetchPosts() {
-            fetch(`http://localhost:3000/api/posts/`)
-                .then((response) => response.json())
-                .then((data) => (this.posts = data))
-                .catch((err) => console.log(err.message));
-        },
+    Increase(postID) {
+        this.$store.dispatch("IncreaseDislikeAct", postID)
     },
-    mounted() {
-        this.fetchPosts();
-        console.log("mounted");
+    fetchPosts() {
+      fetch(`http://localhost:3000/api/posts/`)
+        .then((response) => response.json())
+        .then((data) => (this.posts = data))
+        .catch((err) => console.log(err.message));
     },
+},
+mounted() {
+    this.fetchPosts();
+    console.log("mounted");
+},
+
 };
 </script>
 

@@ -2,13 +2,15 @@
     <HeaderXD></HeaderXD>
     <div class="main">
       <h3>Add a Post</h3>
+      <div class="addpost">
       <div class="form">
         <label for="title">Title: </label>
         <input name="title" type="text" id="title" required v-model="post.title" />
         <label for="body">Body: </label>
-        <input name="body" type="text" id="body" required v-model="post.body" />
+        <input name="body" type="text" id="body" class="addpostinput" required v-model="post.body" />
       </div>
       <button @click="addPost" class="addPost">Add Post</button>
+    </div>
     </div>
     <FooterXD></FooterXD>
   </template>
@@ -60,7 +62,8 @@
 
 <style>
 
-.container {
+
+#addpost container {
 display: flex;
 justify-content: center;
 height: 20vh;
@@ -68,18 +71,19 @@ padding-top: 1%;
 margin-left: 2%;
 }
 
-.form {
+#addpost form {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5vh;
 }
-input {
+
+#addpost input {
     width: 40vw;
     padding: 1%;
 }
 
-.container button {
+#addPost {
     margin-right: 2%;
 }
 
