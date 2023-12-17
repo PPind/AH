@@ -7,7 +7,16 @@
             </div>
         <h1>rulez:</h1>
         <p class="rule">1. no cheezer</p>
+        <img class="ruleImg" src="..\assets\cheezer.jpg" alt = "cheezer">
+        <br>
+        <img class="ruleImg" src="..\assets\haterz.webp" alt = "HATERS DO NOT EVER INTERACT">
+        <br>
         <h1>Contacts</h1>
+        <p>AH !?!?!?</p>
+        <p>Marlene Ibrus, Karl Kristofer Haljand, Pärl Pind </p>
+        <div class="lingike">
+        <a href="https://github.com/PPind/AH">Github</a>
+        </div>
     </div>
     <footer-x-d></footer-x-d>
 </template>
@@ -33,5 +42,14 @@ margin-left: 2%;
 }
 .container button {
     margin-right: 2%;
+}
+
+.lingike {
+    padding-bottom:5%
+}
+
+.ruleImg {
+    height: 60px;
+    width: auto;
 }
 </style>
