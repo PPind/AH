@@ -63,45 +63,45 @@
             },
             fetchAPost(id) {
             // fetch one post with the specied id (id)
-            fetch(`http://localhost:3000/api/posts/${id}`)
-                .then((response) => response.json())
-                .then((data) => (this.post = data))
-                .catch((err) => console.log(err.message));
+                fetch(`http://localhost:3000/api/posts/${id}`)
+                    .then((response) => response.json())
+                    .then((data) => (this.post = data))
+                    .catch((err) => console.log(err.message));
             },
             updatePost() {
             // using Fetch - put method - updates a specific post based on the passed id and the specified body
-            fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-                method: "PUT",
-                headers: {
-                "Content-Type": "application/json",
-                },
-                body: JSON.stringify(this.post),
-            })
-                .then((response) => {
-                console.log(response.data);
-                //this.$router.push("/apost/" + this.post.id);
-                // We are using the router instance of this element to navigate to a different URL location
-                this.$router.push("/api/allposts");
+                fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+                    method: "PUT",
+                    headers: {
+                    "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(this.post),
                 })
-                .catch((e) => {
-                console.log(e);
-                });
+                    .then((response) => {
+                        console.log(response.data);
+                        //this.$router.push("/apost/" + this.post.id);
+                        // We are using the router instance of this element to navigate to a different URL location
+                        this.$router.push("/api/allposts");
+                    })
+                    .catch((e) => {
+                    console.log(e);
+                    });
             },
             deletePost() {
             // using Fetch - delete method - delets a specific post based on the passed id
-            fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
-                method: "DELETE",
-                headers: { "Content-Type": "application/json" },
-            })
-                .then((response) => {
-                console.log(response.data);
-                // We are using the router instance of this element to navigate to a different URL location
-                this.$router.push("/api/allposts");
+                fetch(`http://localhost:3000/api/posts/${this.post.id}`, {
+                    method: "DELETE",
+                    headers: { "Content-Type": "application/json" },
                 })
-                .catch((e) => {
-                console.log(e);
-                });
-            },
+                    .then((response) => {
+                    console.log(response.data);
+                    // We are using the router instance of this element to navigate to a different URL location
+                    this.$router.push("/api/allposts");
+                    })
+                    .catch((e) => {
+                    console.log(e);
+                    });
+                },
         },
         mounted() {
             // call fetchAPost() when this element mounts, and pass to it a route parameter  (id)
