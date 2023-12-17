@@ -5,7 +5,7 @@
       <aside-x-d class = "aside1"></aside-x-d>
   
       <div class="main">
-        <post></post>
+        <one-post></one-post>
       </div>
       
       
@@ -17,14 +17,14 @@
   
   <script>
   // @ is an alias to /sr
-  import Post from '@/components/Post.vue'
+  import OnePost from '@/components/OnePost.vue'
   import AsideXD from '@/components/Aside.vue'
   import HeaderXD from '@/components/Header.vue'
   import FooterXD from '@/components/Footer.vue'
   
   export default {
     name: "APost",
-    components: {Post, AsideXD, HeaderXD, FooterXD},
+    components: {OnePost, AsideXD, HeaderXD, FooterXD},
     data: function() {
         return {}},
     methods: {
