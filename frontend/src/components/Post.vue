@@ -27,51 +27,56 @@
 
 <script>
 export default {
-name: "Post",
-computed: {
-    postList(){
-        return this.$store.state.postList.map(post => {
-            return {
-                ...post,
-                transformedDate : this.ISO8601ToText(post.date)
-            }
-        })
+    name: "Post",
+    data() {
+        return {
+            posts: [],
+        };
     },
-    sortedPosts() {
-    // Sort posts by pinned status (pinned first) and then by date
-    return this.postList.slice().sort((a, b) => {
-      if (a.isPinned !== b.isPinned) {
-        return b.isPinned - a.isPinned; // Pinned posts come first
-      }
-      // Convert ISO 8601 dates to Date objects for comparison
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return dateB - dateA; // Sort by date if not pinned
-    });
-  },
-    hasPinnedPost() {
-        return this.postList && this.postList.length > 0 && this.postList.some(post => post.isPinned);
+    computed: {
+        postList(){
+            return this.posts.map(post => {
+                return {
+                    ...post,
+                    transformedDate : this.ISO8601ToText(post.date)
+                }
+            })
+        },
+        sortedPosts() {
+        // Sort posts by pinned status (pinned first) and then by date
+            return this.postList.slice().sort((a, b) => {
+                if (a.isPinned !== b.isPinned) {
+                    return b.isPinned - a.isPinned; // Pinned posts come first
+                }
+                // Convert ISO 8601 dates to Date objects for comparison
+                const dateA = new Date(a.date);
+                const dateB = new Date(b.date);
+                return dateB - dateA; // Sort by date if not pinned
+            });
+        }
     },
-    pinnedPost() {
-        return this.postList && this.postList.find(post => post.isPinned);
+    methods: {
+        ISO8601ToText(ISOdate) {
+            var chunks = ISOdate.split('-');
+            var months = [
+                'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+            ];
+            return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
+        },
+        Increase(postID) {
+            this.$store.dispatch("IncreaseDislikeAct", postID)
+        },
+        fetchPosts() {
+            fetch(`http://localhost:3000/api/posts/`)
+                .then((response) => response.json())
+                .then((data) => (this.posts = data))
+                .catch((err) => console.log(err.message));
+        },
     },
-    nonPinnedPosts() {
-        return this.postList ? this.postList.filter(post => !post.isPinned) : [];
-    }
-},
-methods: {
-    ISO8601ToText(ISOdate) {
-      var chunks = ISOdate.split('-');
-      var months = [
-        'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      ];
-      return months[parseInt(chunks[1]) - 1] + " " + chunks[2] + ", " + chunks[0];
+    mounted() {
+        this.fetchPosts();
+        console.log("mounted");
     },
-    Increase(postID) {
-        this.$store.dispatch("IncreaseDislikeAct", postID)
-    },
-    }
-
 };
 </script>
 

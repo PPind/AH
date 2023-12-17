@@ -60,6 +60,18 @@ app.get('/auth/authenticate', async(req, res) => {
     }
 });
 
+app.get('/api/posts', async(req, res) => {
+    try {
+        console.log("get posts request has arrived");
+        const posts = await pool.query(
+            "SELECT * FROM posttable"
+        );
+        res.json(posts.rows);
+    } catch (err) {
+        console.error(err.message);
+    }
+});
+
 // signup a user
 app.post('/auth/signup', async(req, res) => {
     try {
