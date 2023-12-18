@@ -6,14 +6,11 @@
   
       <div class="main">
         <h2 v-if = "post.isPinned" class="pinned">PINNED:</h2>
-            <div class = "postHeader">
-                <p class="date">{{ post.transformedDate }}</p>
-            </div>
             <div class="postContent">
                 <h1 class = "title">{{ post.title }}</h1>
                 
-                <img class="postImage" :src=post.postImage />
-                <p>{{ post.body }}</p>
+                <label for="body">Body: </label>
+      <input name="body" type="text" id="body" required v-model="post.body" />
             </div>
             <div class="nupud">
                 <button @click="updatePost" class="updatePost">Update Post</button>
@@ -141,4 +138,14 @@
       overflow: hidden;
       border-radius: 15px;
   }
+  .postContent {
+    border-radius: 15px;
+    background-color: rgb(245, 189, 240);
+    display: flex;
+    flex-direction: column;
+    margin-bottom:2%;
+}
+#body{
+  margin:2%;
+}
   </style>
