@@ -8,7 +8,6 @@
       <button v-if = "authResult" @click="Logout">Logout</button>
       <post></post>
       <div class="nupud">
-        <button v-on:click="ResetDislikes "> Reset </button>
         <button v-on:click="deleteAllPosts "> Delete All </button>
         <button @click='this.$router.push("/addpost")'>Add post</button>
       
